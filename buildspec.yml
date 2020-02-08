@@ -1,7 +1,7 @@
 version: 0.2
 
 phases:
-  prebuild:
+  pre_build:
     commands:
        - $(aws ecr get-login --no-include-email --region $CI_REGION)
   build:
