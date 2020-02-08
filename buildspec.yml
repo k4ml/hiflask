@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+       - docker build -t hiflask .
+  post_build: 
+    commands:
+       - printf '[{"name":"hiflask","imageUri":"k4ml/hiflask"}]' > imagedefinitions.json
+artifacts:
+  files:
+    - imagedefinitions.json
